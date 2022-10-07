@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "c-sharp-oppgave1",
+			"path": "../c-sharp-oppgave1"
+		},
+		{
+			"name": "obj",
+			"path": "../obj"
+		},
+		{
+			"name": "bin",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
