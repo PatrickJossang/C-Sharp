@@ -3,102 +3,111 @@ namespace Quizapp
 {
     internal class Program
     {
-        public int correctAnswer;
-        public int questionNumber = 1;
-        public int score = 0;
-        public int totalQuestions = 4;
-        public float persentage = score / totalQuestions * 100;
+        public static int correctAnswer;
+        public static int questionNumber = 4;
+        public static int score = 0;
+        public static int totalQuestions = 1;
 
-        public void Quiz()
+        public static void Quiz()
         {
-            switch (questionNumber)
+            while (totalQuestions <= questionNumber)
             {
-                case 1:
-                    correctAnswer = 1;
-                    Console.WriteLine("What is the colour of the sky?");
-                    Console.WriteLine("1. Blue");
-                    Console.WriteLine("2. Red");
-                    Console.WriteLine("3. Green");
-                    Console.WriteLine("4. Yellow");
-                    if (correctAnswer.Equals(Console.ReadLine()))
-                    {
-                        Console.WriteLine("Correct");
-                        score++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect");
-                    }
+                switch (totalQuestions)
+                {
+                    case 1:
 
-                    break;
-                case 2:
-                    Console.WriteLine("What is the colour of the grass?");
-                    Console.WriteLine("1. Blue");
-                    Console.WriteLine("2. Red");
-                    Console.WriteLine("3. Green");
-                    Console.WriteLine("4. Yellow");
-                    correctAnswer = 3;
-                    if (correctAnswer.Equals(Console.ReadLine()))
-                    {
-                        Console.WriteLine("Correct");
-                        score++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect");
-                    }
-                    break;
-                case 3:
-                    Console.WriteLine("What is the colour of the sun?");
-                    Console.WriteLine("1. Blue");
-                    Console.WriteLine("2. cyan");
-                    Console.WriteLine("3. Green");
-                    Console.WriteLine("4. Yellow");
-                    correctAnswer = 4;
-                    if (correctAnswer.Equals(Console.ReadLine()))
-                    {
-                        Console.WriteLine("Correct");
-                        score++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect");
-                    }
-                    break;
-                case 4:
-                    Console.WriteLine("What is the colour of the moon?");
-                    Console.WriteLine("1. Blue");
-                    Console.WriteLine("2. Red");
-                    Console.WriteLine("3. gray");
-                    Console.WriteLine("4. Yellow");
-                    correctAnswer = 3;
-                    if (correctAnswer.Equals(Console.ReadLine()))
-                    {
-                        Console.WriteLine("Correct");
-                        score++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect");
-                    }
-                    break;
+                        Console.WriteLine("What is the colour of the sky?");
+                        Console.WriteLine("1. Blue");
+                        Console.WriteLine("2. Red");
+                        Console.WriteLine("3. Green");
+                        Console.WriteLine("4. Yellow");
+                        string? valg = (Console.ReadLine());
 
+                        if (valg == "1")
+                        {
+                            Console.WriteLine("Correct");
+                            score++;
+                            totalQuestions++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect");
+                            
+                            totalQuestions++;
+                        }
+
+                        break;
+                    case 2:
+                        Console.WriteLine("What is the colour of the grass?");
+                        Console.WriteLine("1. Blue");
+                        Console.WriteLine("2. Red");
+                        Console.WriteLine("3. Green");
+                        Console.WriteLine("4. Yellow");
+                        string? valg2 = (Console.ReadLine());
+                        if (valg2 == "3")
+                        {
+                            Console.WriteLine("Correct");
+                            score++;
+                            totalQuestions++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect");
+                            
+                            totalQuestions++;
+                        }
+                        break;
+                    case 3:
+                        Console.WriteLine("What is the colour of the sun?");
+                        Console.WriteLine("1. Blue");
+                        Console.WriteLine("2. cyan");
+                        Console.WriteLine("3. Green");
+                        Console.WriteLine("4. Yellow");
+                        string? valg3 = (Console.ReadLine());
+                        if (valg3 == "4")
+                        {
+                            Console.WriteLine("Correct");
+                            score++;
+                            totalQuestions++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect");
+                            
+                            totalQuestions++;
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("What is the colour of the moon?");
+                        Console.WriteLine("1. Blue");
+                        Console.WriteLine("2. Red");
+                        Console.WriteLine("3. gray");
+                        Console.WriteLine("4. Yellow");
+                        string? valg4 = (Console.ReadLine());
+                        if (valg4 == "3")
+                        {
+                            Console.WriteLine("Correct");
+                            score++;
+                            totalQuestions++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect");
+                            
+                            totalQuestions++;
+                        }
+                        break;
+                }
+                
             }
-            
         }
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the quiz");
-            
-            if (questionNumber == totalQuestions)
-            {
-                Console.WriteLine("You got " + score + " out of " + totalQuestions);
-                Console.WriteLine("That is  the persentage" + persentage + "%");
-            }
-            else if (questionNumber < totalQuestions)
-            {
-                questionNumber++;
-            }
+
+            Quiz();
+            Console.WriteLine("You got " + score + " out of " + (totalQuestions -1));
+            Console.WriteLine("you got " + (score * 100 / (totalQuestions -1)) + "%");
         }
     }
 }
